@@ -1,6 +1,6 @@
 ﻿namespace CalculatorNew
 {
-    partial class Calculator
+    partial class v
     {
         /// <summary>
         /// Required designer variable.
@@ -53,6 +53,11 @@
             this.button15 = new System.Windows.Forms.Button();
             this.dot = new System.Windows.Forms.Button();
             this.equals = new System.Windows.Forms.Button();
+            this.MC = new System.Windows.Forms.Button();
+            this.MR = new System.Windows.Forms.Button();
+            this.MPlus = new System.Windows.Forms.Button();
+            this.MMinus = new System.Windows.Forms.Button();
+            this.MS = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // digit1
@@ -186,7 +191,7 @@
             // display
             // 
             this.display.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.display.Location = new System.Drawing.Point(1, 23);
+            this.display.Location = new System.Drawing.Point(1, 34);
             this.display.Multiline = true;
             this.display.Name = "display";
             this.display.Size = new System.Drawing.Size(154, 34);
@@ -200,7 +205,7 @@
             this.equation.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.equation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.equation.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.equation.Location = new System.Drawing.Point(12, 35);
+            this.equation.Location = new System.Drawing.Point(22, 9);
             this.equation.Name = "equation";
             this.equation.Size = new System.Drawing.Size(0, 13);
             this.equation.TabIndex = 24;
@@ -402,12 +407,72 @@
             this.equals.UseWaitCursor = true;
             this.equals.Click += new System.EventHandler(this.equals_Click);
             // 
-            // Calculator
+            // MC
+            // 
+            this.MC.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MC.Location = new System.Drawing.Point(1, 74);
+            this.MC.Name = "MC";
+            this.MC.Size = new System.Drawing.Size(28, 18);
+            this.MC.TabIndex = 25;
+            this.MC.Text = "MC";
+            this.MC.UseVisualStyleBackColor = true;
+            this.MC.Click += new System.EventHandler(this.MC_Click);
+            // 
+            // MR
+            // 
+            this.MR.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MR.Location = new System.Drawing.Point(25, 74);
+            this.MR.Name = "MR";
+            this.MR.Size = new System.Drawing.Size(33, 18);
+            this.MR.TabIndex = 26;
+            this.MR.Text = "MR";
+            this.MR.UseVisualStyleBackColor = true;
+            this.MR.Click += new System.EventHandler(this.MR_Click);
+            // 
+            // MPlus
+            // 
+            this.MPlus.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MPlus.Location = new System.Drawing.Point(55, 74);
+            this.MPlus.Name = "MPlus";
+            this.MPlus.Size = new System.Drawing.Size(33, 18);
+            this.MPlus.TabIndex = 27;
+            this.MPlus.Text = "M+";
+            this.MPlus.UseVisualStyleBackColor = true;
+            this.MPlus.Click += new System.EventHandler(this.MPlus_Click);
+            // 
+            // MMinus
+            // 
+            this.MMinus.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MMinus.Location = new System.Drawing.Point(85, 74);
+            this.MMinus.Name = "MMinus";
+            this.MMinus.Size = new System.Drawing.Size(33, 18);
+            this.MMinus.TabIndex = 28;
+            this.MMinus.Text = "M-";
+            this.MMinus.UseVisualStyleBackColor = true;
+            this.MMinus.Click += new System.EventHandler(this.MMinus_Click);
+            // 
+            // MS
+            // 
+            this.MS.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.MS.Location = new System.Drawing.Point(115, 74);
+            this.MS.Name = "MS";
+            this.MS.Size = new System.Drawing.Size(33, 17);
+            this.MS.TabIndex = 29;
+            this.MS.Text = "MS";
+            this.MS.UseVisualStyleBackColor = true;
+            this.MS.Click += new System.EventHandler(this.MS_Click);
+            // 
+            // v
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(157, 325);
+            this.Controls.Add(this.MS);
+            this.Controls.Add(this.MMinus);
+            this.Controls.Add(this.MPlus);
+            this.Controls.Add(this.MR);
+            this.Controls.Add(this.MC);
             this.Controls.Add(this.equation);
             this.Controls.Add(this.display);
             this.Controls.Add(this.button23);
@@ -434,10 +499,11 @@
             this.Controls.Add(this.C);
             this.Controls.Add(this.digit1);
             this.MaximizeBox = false;
-            this.Name = "Calculator";
+            this.Name = "v";
             this.ShowIcon = false;
             this.Text = "Calculator";
             this.TransparencyKey = System.Drawing.Color.White;
+   
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,6 +536,11 @@
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button dot;
         private System.Windows.Forms.Button equals;
+        private System.Windows.Forms.Button MC;
+        private System.Windows.Forms.Button MR;
+        private System.Windows.Forms.Button MPlus;
+        private System.Windows.Forms.Button MMinus;
+        private System.Windows.Forms.Button MS;
     }
 }
 

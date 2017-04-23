@@ -10,18 +10,22 @@ using System.Windows.Forms;
 
 namespace CalculatorNew
 {
-    public partial class Calculator : Form
+    public partial class v : Form
     {
+        string saver;
+        double specValue;
         double firstValue = 0;
         double secondValue = 0;
-        string operation = "";
+        double specMemory = 0;
+        string operation1 = "";
         bool operation_pressed = false;
         bool count;
         int k = 0;
+        bool memory = false;
       
         bool chek = false;
 
-        public Calculator()
+        public v()
         {
             InitializeComponent();
         }
@@ -46,6 +50,7 @@ namespace CalculatorNew
 
             }
             else display.Text = display.Text + b.Text;
+            specValue = double.Parse(display.Text);
             operation_pressed = false;
 
             k++;
@@ -61,28 +66,32 @@ namespace CalculatorNew
         private void operation_Click(object sender, EventArgs e)
         {
 
-
+            
             Button b = sender as Button;
-            operation = b.Text;
-            if ((chek) ) //Если операции нажимаются больше одного раза
-            {
-                count = true;
-                equals.PerformClick();
-                operation_pressed = true;
-                
-                equation.Text += firstValue + " " + operation;
-            }
+            operation1 = b.Text;
+            if (memory) firstValue = double.Parse(display.Text);
             else
             {
-                
-                firstValue = double.Parse(display.Text);
-                operation_pressed = true;
-                equation.Text = firstValue + " " + operation;
-                chek = true;
+                if ((chek)) //Если операции нажимаются больше одного раза
+                {
+                    equation.Text = "";
+                    count = true;
+                    equals.PerformClick();
+                    operation_pressed = true;
+
+                    equation.Text += firstValue + " " + saver;
+                }
+                else
+                {
+
+                    firstValue = double.Parse(display.Text);
+                    operation_pressed = true;
+                    equation.Text = firstValue + " " + operation1;
+                    chek = true;
+                }
+
+
             }
-
-        
-
             }  
 
         private void equals_Click(object sender, EventArgs e)
@@ -93,10 +102,11 @@ namespace CalculatorNew
                 chek = false;
             }
             secondValue = double.Parse(display.Text);
-            Brain(operation,firstValue,secondValue);
+            Brain(operation1,firstValue,secondValue);
             operation_pressed = false;
             firstValue = double.Parse(display.Text);
-            operation = "";
+            saver = operation1;
+            operation1 = "";
             count = false;
         }
 
@@ -153,6 +163,46 @@ namespace CalculatorNew
             secondValue = 0;
             equation.Text = "";
         }
+
+        private void MC_Click(object sender, EventArgs e)
+        {
+            specMemory = 0;
+            equation.Text = "";
+        }
+
+        private void MPlus_Click(object sender, EventArgs e)
+        {
+            memory = true;
+            operationplus.PerformClick();
+                     
+            specMemory = firstValue+specMemory;
+            equation.Text = "M";
+            memory = false;
+            display.Text = "";
+        }
+
+        private void MMinus_Click(object sender, EventArgs e)
+        {
+            memory = true;
+            operationplus.PerformClick();
+
+            specMemory -= firstValue;
+            equation.Text = "M";
+            memory = false;
+            display.Text = "";
+        }
+
+        private void MS_Click(object sender, EventArgs e)
+        {
+            specMemory = Double.Parse(display.Text);
+            equation.Text = "";
+        }
+
+        private void MR_Click(object sender, EventArgs e)
+        {
+            display.Text = (specMemory).ToString();
+        }
+
 
     }
 }
